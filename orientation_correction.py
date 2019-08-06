@@ -39,7 +39,16 @@ else :
 # Transforming the image
 (h,w) = image.shape[:2]
 center = (w//2,h//2)
+## It returns a 2*3 matrix consisting of values derived from alpha and beta
+## alpha = scale * cos(angle)
+## beta = scale * sine(angle)
 matrix = cv2.getRotationMatrix2D(center,angle,1.0)
+
+## src – input image and dst – output image 
+## The function warpAffine transforms the source image using the specified matrix:
+## dst(x,y) = src(M11X + M12Y + M13, M21X + M22Y + M23)
+## when the flag WARP_INVERSE_MAP is set. 
+## Otherwise, the transformation is first inverted with invertAffineTransform() and then put in the formula above instead of M . 
 rotated = cv2.warpAffine(image, matrix, (w,h), flags = cv2.INTER_CUBIC, borderMode = cv2.BORDER_REPLICATE)
 
 # Displaying the image
