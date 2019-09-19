@@ -11,3 +11,5 @@ This python program helps in correcting the orientation of an image. If an image
 ## Rotated Image
 
 ![Rotated Image](https://user-images.githubusercontent.com/36099337/59510831-60cf8580-8ed2-11e9-9354-9ca15ae758bc.png)
+
+
